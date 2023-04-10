@@ -1,0 +1,20 @@
+
+
+<header class="header">
+    <a href="/" class="logo"><img src="/images/logodrywall.png"></a>
+    <nav class="navbar">
+        <% categories.forEach(category => { %>
+            <a href="/categories/page/1/<%= category.id %>/<%= category.title %>"><%= category.title %></a>
+        <% }) %>
+    </nav>
+    <div class="icons">
+        <% if(authenticated) { %>
+            <a class="btn btn-success" href="/articles">Dashboard</a>
+            <a class="btn btn-success" href="/logout">Sair</a>
+        <% } else { %>
+            <a class="btn btn-success" href="/login">Entrar</a>
+        <% }  %>
+       <div id="menu-btn" class="fas fa-bars"></div>
+       <div id="info-btn" class="fas fa-info-circle"></div>  
+    </div>
+ </header>

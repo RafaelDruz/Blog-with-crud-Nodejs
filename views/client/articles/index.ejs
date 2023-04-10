@@ -1,0 +1,48 @@
+
+<%- include ('../../partials/header.ejs') %>
+<%- include ('../../partials/navbaruser.ejs') %>
+
+<div class="custontable">
+	<h2>ARTIGOS</h2>
+	<div class="create">
+		<a class="btn btn-success" href="/articles/new">Criar artigo</a>
+	</div>
+	<table class="table">
+		<thead>
+			<tr> 
+				<th>ID</th>
+				<th>Título</th>
+				<th>Category</th>
+				<th>Ações</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% articles.forEach(article => { %>
+				<tr>
+					<td><%= article.id %></td>
+					<td><%= article.title %></td>
+					<td><%= article.category.title %></td>
+					<td>
+						<a class="btn btn-warning" href="/articles/edit/<%= article.id %>">Editar</a>
+						<form method="POST" action="/articles/delete" style="display:inline" onsubmit="confirmdelete(event, this)">
+							<input type="hidden" name="id" value="<%= article.id %>">
+							<button class="btn btn-danger">Deletar</button>
+						</form>
+					</td>
+				</tr>
+			<% }) %>
+		</tbody>
+	</table>
+</div>
+	
+<script>
+	function confirmdelete(event, form){
+		event.preventDefault();
+		var decision = confirm("Quer deleter este artigo?");
+		if(decision){
+			form.submit();
+		}
+	}
+</script>
+
+<%- include ('../../partials/footer.ejs') %>

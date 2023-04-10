@@ -1,0 +1,29 @@
+
+<%- include ('../../partials/header.ejs') %>
+
+<%- include ('../../partials/contact-info.ejs') %>
+
+<%- include ('../../partials/homenavbar.ejs') %>
+ 
+<section class="showallArticle">
+    <div class="card">
+        <div class="image">
+            <img src="<%= article.image %>">
+        </div>
+        
+        <div class="card-header">
+            <h2><%= article.title %></h2>  
+            
+        </div>
+        <div class="card-body">
+            <h3><%- article.body %></h3>
+        </div>
+    </div>
+</section>
+
+<%- include ('../../partials/footer.ejs') %>
+
+
+
+  
+ 

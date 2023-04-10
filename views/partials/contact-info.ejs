@@ -1,0 +1,51 @@
+
+<div class="contact-info">
+    <div id="close-contact-info" class="fas fa-times"></div>
+    <div class="box-info">
+      <div class="swiper">
+         <div class="slide-swiper">
+            <div class="swiper-wrapper">
+               <% articles.forEach(article => { %>
+                  <% const categoryArtc = categories.find(category => category.id === article.categoryId) %>
+                  <a href="/<%= article.slug %>" class="swiper-slide">
+                     <div class="image">
+                        <img src="/<%= article.image %>" alt="">
+                     </div>
+                     <h3><%= article.title %></h3>
+                  </a>
+               <% }) %>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> 
+ 
+<script>
+   var swiper = new Swiper(".slide-swiper", {
+     slidesPerView: 5,
+     spaceBetween: 30,
+     loop: true,
+     speed: 1000,
+     autoplay: {
+       delay: 2000,
+     },
+     freeMode: true,
+     breakpoints: {
+      320: {
+         slidesPerView: 1,
+      },
+      480: {
+         slidesPerView: 2,
+      },
+      768: {
+         slidesPerView: 3,
+      },
+      1200: {
+         slidesPerView: 4,
+      },
+     }
+   });
+</script>
+ 

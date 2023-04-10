@@ -1,0 +1,34 @@
+
+<%- include ('../../partials/header.ejs') %>
+
+<%- include ('../../partials/homenavbar.ejs') %>
+
+<%- include ('../../partials/contact-info.ejs') %>
+
+<%- include ('../../partials/home.ejs') %>
+
+<section class="projects" id="projects">
+	<div class="box-container">
+		<% articlesA.forEach(article => { %>
+			<div href="" class="box">
+				<div class="image">
+					<img src="./<%= article.image %>" alt="">
+				</div>
+				<div class="content">
+					<div class="info">
+						<h2><%= article.title %></h2>
+						<a href="/<%= article.slug %>" class="btn btn-success">Ler artigo</a>
+					</div>
+				</div>
+			</div>
+		<% }) %>
+	</div>
+	<% if(articles.length > 6 ) { %>
+		<div class="row">
+			<a href="/articles/page/2"><img src="./icon/arrowright.png" class="icon" title="Próxima"></a>
+		</div>
+	<% } %>
+</section>
+
+<%- include ('../../partials/footer.ejs') %>
+

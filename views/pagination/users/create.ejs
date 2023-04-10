@@ -1,0 +1,18 @@
+
+<%- include ('../../partials/header.ejs') %>
+
+<section class="LoginForm" id="contact">
+    <a href="/" class="logoout"><h2>Retornar</h2></a>
+        <form action="/users/create" method="POST" class="loginform">
+            <h1 class="heading"> Cadastrar </h1>
+            <label for="password">Digite um email para cadastrar</label>
+            <input type="email"  name="email" placeholder="email@exemple.com" class="box" required>
+            <label for="password">Digite uma senha</label>
+            <input type="password"  name="password" placeholder="*******"><br>
+            <input type="submit" id="my-form-button" value="Criar">
+            <div id="my-form-status" class="inf_status"></div>
+        </form>
+    
+</section>
+
+
